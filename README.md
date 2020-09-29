@@ -51,9 +51,15 @@ Edit /opt/freeswitch/conf/vars.xml, and change
 To
 
 ```xml
-<X-PRE-PROCESS cmd="set" data="external_rtp_ip=EXTERNAL_IP_ADDRESS"/>
-<X-PRE-PROCESS cmd="set" data="external_sip_ip=EXTERNAL_IP_ADDRESS"/>
+<X-PRE-PROCESS cmd="set" data="external_rtp_ip=BBB_PUBLIC_IP"/>
+<X-PRE-PROCESS cmd="set" data="external_sip_ip=BBB_PUBLIC_IP"/>
 ```
 
+**Update Firewall Rule**
+I am assuming 5060 is the default SIP port. We need to open this port for UDP connections.
+```sh
+$sudo ufw allow 5060/udp
+```
 
+You can verify external_sip_port in /opt/freeswitch/conf/vars.xml
 
