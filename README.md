@@ -16,9 +16,13 @@ Why Twilio? You get a free trial account to test the full functionality with a f
 
 # Setting up Your Twilio Elastic SIP Trunk
 
-Login to your Twilio account. Check-out getting started guide on [Elastic SIP Trunking](https://www.twilio.com/docs/sip-trunking).
+Login to your Twilio account. 
 
 I am going to list-out key steps that you need to perform:
 1. Termination URL: Give a unique identifier (example - your project name) to identify your Termination SIP URI. You will use this URI in setting-up FreesSWITCH later. 
 2. Originating URI: Give the public IP of your BigBlueButton server in the following format: sip:BBB_PUBLIC_IP
-3. ACL: Go to Elastic SIP Trunking > Authentication > IP / CIDR Access Control Lists to add public IP your BigBlueButton server. You can add your public IP in the following format: BBB_PUBLIC_IP / 32 
+3. IP Access Control Lists: Go to Elastic SIP Trunking > Authentication > IP / CIDR Access Control Lists to add public IP your BigBlueButton server. You can add your public IP in the following format: BBB_PUBLIC_IP / 32
+4.  Credential Lists: Add a creential. Enter a name and use your Twilio Username and Password.
+
+
+That's all you would need to setup a phone number for your BigBlueButton classes. For additional information, check-out getting started guide on [Elastic SIP Trunking](https://www.twilio.com/docs/sip-trunking).
