@@ -31,8 +31,10 @@ That's all you would need to setup a phone number for your BigBlueButton classes
 I am assuming you have a standard [BigBlueButton installation](https://github.com/bigbluebutton/bbb-install), where FreeSWITCH is running on the same machine as your BigBlueButton server. 
 
 Edit /opt/freeswitch/conf/sip_profiles/external.xml and change
+```xml
 <param name="ext-rtp-ip" value="$${local_ip_v4}"/>
 <param name="ext-sip-ip" value="$${local_ip_v4}"/>
+```
 
 To 
 ```xml
@@ -41,13 +43,17 @@ To
 ```
 
 Edit /opt/freeswitch/conf/vars.xml, and change
+```xml
 <X-PRE-PROCESS cmd="set" data="external_rtp_ip=stun:stun.freeswitch.org"/>
 <X-PRE-PROCESS cmd="set" data="external_sip_ip=stun:stun.freeswitch.org"/>
+```
 
 To
 
+```xml
 <X-PRE-PROCESS cmd="set" data="external_rtp_ip=EXTERNAL_IP_ADDRESS"/>
 <X-PRE-PROCESS cmd="set" data="external_sip_ip=EXTERNAL_IP_ADDRESS"/>
+```
 
 
 
