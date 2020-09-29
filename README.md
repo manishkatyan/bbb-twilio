@@ -56,6 +56,7 @@ To
 ```
 
 **Update Firewall Rule**
+
 I am assuming 5060 is the default SIP port. We need to open this port for UDP connections.
 ```sh
 $sudo ufw allow 5060/udp
