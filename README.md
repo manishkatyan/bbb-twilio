@@ -35,10 +35,10 @@ Edit /opt/freeswitch/conf/sip_profiles/external.xml and change
 <param name="ext-sip-ip" value="$${local_ip_v4}"/>
 
 To 
-
+```xml
 <param name="ext-rtp-ip" value="$${external_rtp_ip}"/>
 <param name="ext-sip-ip" value="$${external_sip_ip}"/>
-
+```
 
 Edit /opt/freeswitch/conf/vars.xml, and change
 <X-PRE-PROCESS cmd="set" data="external_rtp_ip=stun:stun.freeswitch.org"/>
