@@ -16,10 +16,10 @@ Why Twilio? You get a free trial account to test the full functionality with a f
 
 # Setting up Your Twilio Elastic SIP Trunk
 
-Login to your Twilio account. 
+Login to your Twilio account and navigate to the Dashboard to [Elastic SIP Trunking](https://www.twilio.com/user/account/sip-trunking) by clicking the dropdown menu in the left side. Click on [Trunks](https://www.twilio.com/console/sip-trunking/trunks) to provision an Elastic SIP Trunk. 
 
 I am going to list-out key steps that you need to perform:
-1. Termination URL: Give a unique identifier (example - your project name) to identify your Termination SIP URI. You will use this URI in setting-up FreesSWITCH later. 
+1. Termination URL: Give a unique identifier (example - your project name) to identify your Termination SIP URI. You will use this URI to set-up FreesSWITCH later. 
 2. Originating URI: Give the public IP of your BigBlueButton server in the following format: sip:BBB_PUBLIC_IP
 3. IP Access Control Lists: Go to Elastic SIP Trunking > Authentication > IP / CIDR Access Control Lists to add public IP your BigBlueButton server. You can add your public IP in the following format: BBB_PUBLIC_IP / 32
 4.  Credential Lists: Add a creential. Enter a name and use your Twilio Username and Password.
@@ -61,6 +61,7 @@ I am assuming 5060 is the default SIP port. We need to open this port for UDP co
 ```sh
 $sudo ufw allow 5060/udp
 ```
+### Build SIP Trunk to Twilio
 
 You can verify external_sip_port in /opt/freeswitch/conf/vars.xml
 
