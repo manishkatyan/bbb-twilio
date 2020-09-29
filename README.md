@@ -61,7 +61,9 @@ I am assuming 5060 is the default SIP port. We need to open this port for UDP co
 ```sh
 $sudo ufw allow 5060/udp
 ```
-### Build SIP Trunk to Twilio
 
 You can verify external_sip_port in /opt/freeswitch/conf/vars.xml
+
+### Build SIP Trunk to Twilio
+
 
