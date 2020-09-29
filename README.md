@@ -26,3 +26,28 @@ I am going to list-out key steps that you need to perform:
 
 
 That's all you would need to setup a phone number for your BigBlueButton classes. For additional information, check-out getting started guide on [Elastic SIP Trunking](https://www.twilio.com/docs/sip-trunking).
+
+# Configure your FreeSWITCH
+I am assuming you have a standard [BigBlueButton installation](https://github.com/bigbluebutton/bbb-install), where FreeSWITCH is running on the same machine as your BigBlueButton server. 
+
+Edit /opt/freeswitch/conf/sip_profiles/external.xml and change
+<param name="ext-rtp-ip" value="$${local_ip_v4}"/>
+<param name="ext-sip-ip" value="$${local_ip_v4}"/>
+
+To 
+
+<param name="ext-rtp-ip" value="$${external_rtp_ip}"/>
+<param name="ext-sip-ip" value="$${external_sip_ip}"/>
+
+
+Edit /opt/freeswitch/conf/vars.xml, and change
+<X-PRE-PROCESS cmd="set" data="external_rtp_ip=stun:stun.freeswitch.org"/>
+<X-PRE-PROCESS cmd="set" data="external_sip_ip=stun:stun.freeswitch.org"/>
+
+To
+
+<X-PRE-PROCESS cmd="set" data="external_rtp_ip=EXTERNAL_IP_ADDRESS"/>
+<X-PRE-PROCESS cmd="set" data="external_sip_ip=EXTERNAL_IP_ADDRESS"/>
+
+
+
