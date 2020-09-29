@@ -12,4 +12,13 @@ Well, integrating a phone number into your online classes is a great way to miti
 # Twilio + BigBlueButton
 We are going to get a phone number from [Twilio](https://www.twilio.com/) and configure FreeSWITCH accordingly to receive incoming calls via session initiation protocol (SIP) fromTwilio.
 
-Why Twilio? You get a free trial account to test the full functionality with a free dial-in phone number. Documentation is extensive, logs are detailed and it just works! Use my [referral link to get $10 credit when you upgrade](https://www.twilio.com/referral/VfQyDw).  
+Why Twilio? You get a free trial account to test the full functionality with a free dial-in phone number. Documentation is extensive, logs are detailed and it just works! Use my [referral link to get $10 credit when you upgrade](https://www.twilio.com/referral/VfQyDw).
+
+# Setting up Your Twilio Elastic SIP Trunk
+
+Login to your Twilio account. Check-out getting started guide on (Elastic SIP Trunking]{https://www.twilio.com/docs/sip-trunking).
+
+I am going to list-out key steps that you need to perform:
+1. Termination URL: Give a unique identifier (example - your project name) to identify your Termination SIP URI. You will use this URI in setting-up FreesSWITCH later. 
+2. Originating URI: Give the public IP of your BigBlueButton server in the following format: sip:BBB_PUBLIC_IP
+3. ACL: Go to Elastic SIP Trunking > Authentication > IP / CIDR Access Control Lists to add public IP your BigBlueButton server. You can add your public IP in the following format: BBB_PUBLIC_IP / 32 
