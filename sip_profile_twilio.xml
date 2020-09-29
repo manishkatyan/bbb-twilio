@@ -1,9 +1,9 @@
 <include>
-  <gateway name="cpp.pstn.twilio.com">
-    <param name="proxy" value="cpp.pstn.twilio.com"/>
-    <param name="username" value="manishkatyan@gmail.com"/>
-    <param name="password" value="4,dz3QvGV@#H]%$"/>
-    <param name="extension" value="2564725575"/>
+  <gateway name="MY_TWILIO_TERMINATION_URI">
+    <param name="proxy" value="MY_TWILIO_TERMINATION_URI"/>
+    <param name="username" value="MY_TWILIO_USERNAME"/>
+    <param name="password" value="MY_TWILIO_PASSWORD"/>
+    <param name="extension" value="twilio-extension"/>
     <param name="register" value="true"/>
     <param name="context" value="public"/>
   </gateway>

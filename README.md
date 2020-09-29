@@ -59,11 +59,25 @@ To
 
 I am assuming 5060 is the default SIP port. We need to open this port for UDP connections.
 ```sh
-$sudo ufw allow 5060/udp
+sudo ufw allow 5060/udp
 ```
 
 You can verify external_sip_port in /opt/freeswitch/conf/vars.xml
 
-### Build SIP Trunk to Twilio
+# Connect FreeSWITCH to Twilio
+
+### Create SIP Profile
+
+
+```sh
+cp sip_profile_twilio.xml /opt/freeswitch/conf/sip_profiles/external/twilio.xml
+```
+
+Download the sample SIP profile, sip_profile_twilio.xml and make the following changes:
+1. Set gateway name to the Termination URL that you created above while [setting up Twilio Elastic SIP Trunk](https://github.com/manishkatyan/bbb-twilio#setting-up-your-twilio-elastic-sip-trunk). The gateway name would have the following format: my-project-name.pstn.twilio.com.
+2. Set proxy the same as the gateway name.
+3. Set username and password the same as your Twilio username and password. Check [Credential Lists](https://github.com/manishkatyan/bbb-twilio#setting-up-your-twilio-elastic-sip-trunk)  
+
+After making above changes, copy SIP profile to /opt/freeswitch/conf/sip_profiles/external/
 
 
