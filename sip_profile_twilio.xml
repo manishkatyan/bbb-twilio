@@ -1,0 +1,10 @@
+<include>
+  <gateway name="cpp.pstn.twilio.com">
+    <param name="proxy" value="cpp.pstn.twilio.com"/>
+    <param name="username" value="manishkatyan@gmail.com"/>
+    <param name="password" value="4,dz3QvGV@#H]%$"/>
+    <param name="extension" value="2564725575"/>
+    <param name="register" value="true"/>
+    <param name="context" value="public"/>
+  </gateway>
+</include>
