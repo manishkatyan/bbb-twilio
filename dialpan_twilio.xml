@@ -1,4 +1,4 @@
-<extension name="2564725575">
+<extension name="twilio-extension">
  <condition field="destination_number" expression="^(\+|00)[1-9][0-9]{10}$">
    <action application="answer"/>
    <action application="sleep" data="1000"/>
