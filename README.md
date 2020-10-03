@@ -9,12 +9,12 @@ If you have been running BigBlueButton servers for a while, you might have recei
 
 Well, integrating a phone number into your online classes is a great way to mitigate such audio issues. 
 
-# Twilio + BigBlueButton
+## Twilio + BigBlueButton
 We are going to get a phone number from [Twilio](https://www.twilio.com/) and configure FreeSWITCH accordingly to receive incoming calls via session initiation protocol (SIP) fromTwilio.
 
 Why Twilio? You get a free trial account to test the full functionality with a free dial-in phone number. Documentation is extensive, logs are detailed and it just works! Use my [referral link to get $10 credit when you upgrade](https://www.twilio.com/referral/VfQyDw).
 
-# Setting up Your Twilio Elastic SIP Trunk
+## Setting up Your Twilio Elastic SIP Trunk
 
 Login to your Twilio account and navigate to the Dashboard to [Elastic SIP Trunking](https://www.twilio.com/user/account/sip-trunking) by clicking the dropdown menu in the left side. Click on [Trunks](https://www.twilio.com/console/sip-trunking/trunks) to provision an Elastic SIP Trunk. 
 
@@ -27,7 +27,7 @@ I am going to list-out key steps that you need to perform:
 
 That's all you would need to setup a phone number for your BigBlueButton classes. For additional information, check-out getting started guide on [Elastic SIP Trunking](https://www.twilio.com/docs/sip-trunking).
 
-# Configure your FreeSWITCH
+## Configure your FreeSWITCH
 I am assuming you have a standard [BigBlueButton installation](https://github.com/bigbluebutton/bbb-install), where FreeSWITCH is running on the same machine as your BigBlueButton server. 
 
 Edit /opt/freeswitch/conf/sip_profiles/external.xml and change
@@ -55,14 +55,16 @@ To
 <X-PRE-PROCESS cmd="set" data="external_sip_ip=BBB_PUBLIC_IP"/>
 ```
 
-**Update Firewall Rule**
+### Update Firewall Rule
 
 I am assuming 5060 is the default SIP port. We need to open this port for UDP connections.
 ```sh
 sudo ufw allow 5060/udp
 ```
 
-You can verify external_sip_port in /opt/freeswitch/conf/vars.xml
+You can verify external-sip-port in `/opt/freeswitch/conf/vars.xml`
+
+In your Twilio account, check Networking Info section under Elastic SIP Trunking. You will find Twilio IP addresses that you should whitelist for post 5060/UDP. With these rules, you won’t get spammed by bots scanning for SIP endpoints and trying to connect. 
 
 ## Connect FreeSWITCH to Twilio
 
