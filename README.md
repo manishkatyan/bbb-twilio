@@ -128,5 +128,21 @@ To join this meeting by phone, dial:
 and enter 12345 as the conference PIN number.
 ```
 
+## More on BigBlueButton
+
+Check-out the following projects to further extend features of BBB.
+
+### [bbb-mp4](https://github.com/manishkatyan/bbb-mp4)
+
+With this app, you can convert a BigBlueButton recording into MP4 video and upload to S3. You can covert multiple MP4 videos in parallel or automate the conversion process.
+
+
+### [bbb-customize](https://github.com/manishkatyan/bbb-optimize)
+
+Better audio quality, increase recording processing speed, dynamic video profile, pagination, fix 1007/1020 errors and use apply-config.sh to manage your customizations are some key techniques for you to optimize and smoothly run your BigBlueButton servers.
+
+### [100 Most Googled Questions on BigBlueButton](https://higheredlab.com/bigbluebutton-guide/)
+
+Everything you need to know about BigBlueButton including pricing, comparison with Zoom, Moodle integrations, scaling, and dozens of troubleshooting.
 
 
