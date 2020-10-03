@@ -64,7 +64,7 @@ sudo ufw allow 5060/udp
 
 You can verify external_sip_port in /opt/freeswitch/conf/vars.xml
 
-# Connect FreeSWITCH to Twilio
+## Connect FreeSWITCH to Twilio
 
 ### Create SIP Profile
 
@@ -79,5 +79,52 @@ Download the sample SIP profile, sip_profile_twilio.xml and make the following c
 3. Set username and password the same as your Twilio username and password. Check [Credential Lists](https://github.com/manishkatyan/bbb-twilio#setting-up-your-twilio-elastic-sip-trunk)  
 
 After making above changes, copy SIP profile to /opt/freeswitch/conf/sip_profiles/external/
+
+### Create a Dialplan
+
+```sh
+cp dialplan_twilio.xml /opt/freeswitch/conf/dialplan/public/twilio.xml
+```
+
+To route the incoming call from Twilio to the correct BigBlueButton audio conference, you need to create a dialplan which, for FreeSWITCH, is a set of instructions that it runs when receiving an incoming call. 
+
+When a user calls the phone number, the dialplan will prompt the user to enter a five digit number associated with the conference.
+
+Value of field `destination_number` is customized for Twilio so that it will accept
+- the dial-in number format startig with either + or 00
+- single digit nnumber between 1 and 9 for USA number. This can be changed to [1-9]{2} for France (33) or India (91)
+- 10 digit number between 0 and 9 for USA number. This can be changed to [0-9]{x}, where x = number of remaining digits in the dial number    
+
+Change ownership of this file to freeswitch:daemon
+```sh
+chown freeswitch:daemon /opt/freeswitch/conf/dialplan/public/my_provider.xml
+```
+
+and then restart FreeSWITCH:
+```sh
+sudo systemctl restart freeswitch
+```
+
+Try calling the phone number. It should connect to FreeSWITCH and you should hear a voice prompting you to enter the five digit PIN number for the conference. Please note, that dialin will currently only work if at least one web participant has joined with their microphone.
+
+To always show users the phone number along with the 5-digit PIN number within BigBlueButton, edit `/usr/share/bbb-web/WEB-INF/classes/bigbluebutton.properties` and change `613-555-1234` to the phone number provided by Twilio
+```sh
+defaultDialAccessNumber=613-555-1234
+```
+
+and change defaultWelcomeMessageFooter to
+```sh
+defaultWelcomeMessageFooter=<br><br>To join this meeting by phone, dial:<br>  %%DIALNUM%%<br>Then enter %%CONFNUM%% as the conference PIN number.
+```
+
+Save `bigbluebutton.properties` and restart BigBlueButton again. 
+
+Each user that joins a session will see a message in the chat similar to.
+```sh
+To join this meeting by phone, dial:
+   613-555-1234
+and enter 12345 as the conference PIN number.
+```
+
 
 
