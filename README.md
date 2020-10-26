@@ -136,10 +136,12 @@ Check-out the following projects to further extend features of BBB.
 
 With this app, you can convert a BigBlueButton recording into MP4 video and upload to S3. You can covert multiple MP4 videos in parallel or automate the conversion process.
 
-
 ### [bbb-customize](https://github.com/manishkatyan/bbb-optimize)
 
 Better audio quality, increase recording processing speed, dynamic video profile, pagination, fix 1007/1020 errors and use apply-config.sh to manage your customizations are some key techniques for you to optimize and smoothly run your BigBlueButton servers.
+
+### [bbb-streaming](https://github.com/manishkatyan/bbb-streaming)
+Livestream your BigBlueButton classes on Youtube or Facebook to thousands of your users.
 
 ### [100 Most Googled Questions on BigBlueButton](https://higheredlab.com/bigbluebutton-guide/)
 
