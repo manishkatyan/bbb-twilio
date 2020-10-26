@@ -99,7 +99,7 @@ Value of field `destination_number` is customized for Twilio so that it will acc
 
 Change ownership of this file to freeswitch:daemon
 ```sh
-chown freeswitch:daemon /opt/freeswitch/conf/dialplan/public/my_provider.xml
+chown freeswitch:daemon /opt/freeswitch/conf/dialplan/public/twilio.xml
 ```
 
 and then restart FreeSWITCH:
