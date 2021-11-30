@@ -1,0 +1,10 @@
+<include>
+    <gateway name="GATEWAY">
+        <param name="proxy" value="PROXY" />
+        <param name="username" value="USERNAME" />
+        <param name="password" value="PASSWORD" />
+        <param name="extension" value="EXTERNAL DID"/>
+        <param name="register" value="true" />
+       <param name="context" value="public"/>
+    </gateway>
+</include>
