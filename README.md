@@ -139,9 +139,3 @@ and enter 12345 as the conference PIN number.
 - 2 weeks free trial; No credit card needed
 
 <a href="https://higheredlab.com/bigbluebutton" target="_blank"><strong>Start Free Trial</strong></a>
-
-### [100 Most Googled Questions on BigBlueButton](https://higheredlab.com/bigbluebutton-guide/)
-
-Everything you need to know about BigBlueButton including pricing, comparison with Zoom, Moodle integrations, scaling, and dozens of troubleshooting.
-
-
